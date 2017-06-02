@@ -98,22 +98,22 @@ function(req) {
 
 rate_limit <- function() {
 
-	# First request --- initialize time of first request and request count
-	if (Sys.getenv("VT_RATE_LIMIT") == "") return(Sys.setenv(VT_RATE_LIMIT = paste0(0, ",", Sys.time(), ",", 0)))
-
-	rate_lim         <- Sys.getenv("VT_RATE_LIMIT") 
-	req_count        <- as.numeric(gsub(",.*", "", rate_lim)) + 1
-	past_duration    <- as.numeric(strsplit(rate_lim, ",")[[1]][3], units="secs")	
-	current_duration <- difftime(Sys.time(), as.POSIXct(strsplit(rate_lim, ",")[[1]][2]), units = "secs") 
-
-	if (current_duration > 60) return(Sys.setenv(VT_RATE_LIMIT = paste0(1, ",", Sys.time(), ",", 0)))
-
-	net_duration     <- past_duration + current_duration
-
-	if (req_count > 4 & net_duration <= 60) { 
-		Sys.sleep(60 -  net_duration)
-		return(Sys.setenv(VT_RATE_LIMIT = paste0(1, ",", Sys.time(), ",", 0)))
-	}
-
-	return(Sys.setenv(VT_RATE_LIMIT = paste0(req_count, ",", Sys.time(), ",", net_duration)))
+#	# First request --- initialize time of first request and request count
+#	if (Sys.getenv("VT_RATE_LIMIT") == "") return(Sys.setenv(VT_RATE_LIMIT = paste0(0, ",", Sys.time(), ",", 0)))
+#
+#	rate_lim         <- Sys.getenv("VT_RATE_LIMIT") 
+#	req_count        <- as.numeric(gsub(",.*", "", rate_lim)) + 1
+#	past_duration    <- as.numeric(strsplit(rate_lim, ",")[[1]][3], units="secs")	
+#	current_duration <- difftime(Sys.time(), as.POSIXct(strsplit(rate_lim, ",")[[1]][2]), units = "secs") 
+#
+#	if (current_duration > 60) return(Sys.setenv(VT_RATE_LIMIT = paste0(1, ",", Sys.time(), ",", 0)))
+#
+#	net_duration     <- past_duration + current_duration
+#
+#	if (req_count > 4 & net_duration <= 60) { 
+#		Sys.sleep(60 -  net_duration)
+#		return(Sys.setenv(VT_RATE_LIMIT = paste0(1, ",", Sys.time(), ",", 0)))
+#	}
+#
+#	return(Sys.setenv(VT_RATE_LIMIT = paste0(req_count, ",", Sys.time(), ",", net_duration)))
 }
