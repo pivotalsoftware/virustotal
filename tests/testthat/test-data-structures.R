@@ -13,7 +13,7 @@ test_that("can decrypt secrets and data structures verified", {
 
   # Testing URL Report
   # ------------------------------
-  report <- url_report("http://www.google.com")
+  report <- url_report("https://www.google.com")
   expect_that(report, is_a("data.frame"))
 
   report <- url_report(scan_id = "ebdd15c397d2b0c6f50c3f2df531357d1201ff5976802316405e60880d6bf5ec-1478786749")
@@ -46,10 +46,10 @@ test_that("can decrypt secrets and data structures verified", {
   report <- rescan_file(hash='99017f6eebbac24f351415dd410d522d')
 	expect_that(report, is_a("data.frame"))
 
-	report <- scan_url("http://www.google.com")
+	report <- scan_url("https://www.google.com")
 	expect_that(report, is_a("data.frame"))
 
-	report <- domain_report("http://www.google.com")
+	report <- domain_report("https://www.google.com")
 	expect_that(report, is_a("list"))
 
   })

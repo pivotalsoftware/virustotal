@@ -39,7 +39,7 @@ function(query=list(), path = path, key = Sys.getenv("VirustotalToken"), ...) {
 
 	rate_limit()
 
-	res <- GET("http://www.virustotal.com/", path = paste0("vtapi/v2/", path), query = query, ...)
+	res <- GET("https://www.virustotal.com/", path = paste0("vtapi/v2/", path), query = query, ...)
 	virustotal_check(res)
 	res <- content(res)
 
@@ -67,7 +67,7 @@ function(query=list(), path = path, body=NULL, key = Sys.getenv("VirustotalToken
 
 	rate_limit()
 
-	res <- POST("http://www.virustotal.com/", path = paste0("vtapi/v2/", path), query = query, body = body, ...)
+	res <- POST("https://www.virustotal.com/", path = paste0("vtapi/v2/", path), query = query, body = body, ...)
 	virustotal_check(res)
 	res <- content(res)
 

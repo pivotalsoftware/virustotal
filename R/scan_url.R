@@ -19,7 +19,7 @@
 #' 
 #' # Before calling the function, set the API key using set_key('api_key_here')
 #' 
-#' scan_url("http://www.google.com")
+#' scan_url("https://www.google.com")
 #' }
 
 scan_url <- function(url = NULL, ...) {

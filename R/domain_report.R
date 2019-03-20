@@ -23,8 +23,8 @@
 #' 
 #' # Before calling the function, set the API key using set_key('api_key_here')
 #'    
-#' domain_report("http://www.google.com")
-#' domain_report("http://www.goodsfwrfw.com") # Domain not found
+#' domain_report("https://www.google.com")
+#' domain_report("https://www.goodsfwrfw.com") # Domain not found
 #' }
 
 domain_report <- function(domain = NULL, ...) {
