@@ -42,7 +42,7 @@ Get report on a domain, including passive DNS:
 
 
 ```r
-domain_report("http://www.google.com")$categories
+domain_report("https://www.google.com")$categories
 ```
 ```
 ## [[1]]
@@ -52,12 +52,12 @@ domain_report("http://www.google.com")$categories
 
 
 ```r
-scan_url("http://www.google.com")
+scan_url("https://www.google.com")
 ```
 
 ```
 ##                                                                                                             permalink               resource
-## 1 https://www.virustotal.com/url/dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf/analysis/1464817664/ http://www.google.com/
+## 1 https://www.virustotal.com/url/dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf/analysis/1464817664/ https://www.google.com/
 ```
 
 #### Get URL report
@@ -66,20 +66,20 @@ Get report on a domain, including URL:
 
 
 ```r
-head(url_report("http://www.google.com")[, 1:2], 10)
+head(url_report("https://www.google.com")[, 1:2], 10)
 ```
 ```
 ##                                                                        scan_id              resource
-## 1  dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf-1464816996 http://www.google.com
-## 2  dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf-1464816996 http://www.google.com
-## 3  dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf-1464816996 http://www.google.com
-## 4  dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf-1464816996 http://www.google.com
-## 5  dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf-1464816996 http://www.google.com
-## 6  dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf-1464816996 http://www.google.com
-## 7  dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf-1464816996 http://www.google.com
-## 8  dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf-1464816996 http://www.google.com
-## 9  dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf-1464816996 http://www.google.com
-## 10 dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf-1464816996 http://www.google.com
+## 1  dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf-1464816996 https://www.google.com
+## 2  dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf-1464816996 https://www.google.com
+## 3  dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf-1464816996 https://www.google.com
+## 4  dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf-1464816996 https://www.google.com
+## 5  dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf-1464816996 https://www.google.com
+## 6  dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf-1464816996 https://www.google.com
+## 7  dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf-1464816996 https://www.google.com
+## 8  dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf-1464816996 https://www.google.com
+## 9  dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf-1464816996 https://www.google.com
+## 10 dd014af5ed6b38d9130e3f466f850e46d21b951199d53a18ef29ee9341614eaf-1464816996 https://www.google.com
 ```
 #### Get IP report
 
